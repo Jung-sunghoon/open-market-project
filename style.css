@@ -1,0 +1,16 @@
+.sr-only {
+  position: absolute; /* 필수 */
+  width: 1px; /* 필수 */
+  height: 1px; /* 필수 */
+  margin: -1px; /* 필수 */
+  padding: 0; /* 필수 */
+  overflow: hidden; /* 필수 */
+  clip: rect(0, 0, 0, 0); /* 필수 */
+  border: 0; /* 필수 */
+  /* 아래의 속성들은 보조 기술에서 접근성을 위해 제공됩니다 */
+  white-space: nowrap; /* 필수: 텍스트 줄바꿈 방지 */
+  background-color: transparent; /* 선택 사항: 배경색이 있는 경우 배경을 투명하게 설정 */
+}
+
+@media (prefers-color-scheme: light) {
+}
