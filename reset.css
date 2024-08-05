@@ -152,3 +152,7 @@ table {
   display: block;
   clear: both;
 }
+
+a {
+  text-decoration: none;
+}

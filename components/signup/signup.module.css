@@ -1,4 +1,4 @@
-.loginContainer {
+.signupContainer {
   margin: auto;
 }
 
@@ -13,7 +13,7 @@
   height: 100%;
 }
 
-.loginSection {
+.signupSection {
   width: 550px;
   margin: auto;
   border: 1px solid #c4c4c4;
@@ -21,28 +21,28 @@
   border-radius: 10px;
 }
 
-.loginTypeContainer {
+.signupTypeContainer {
   display: flex;
   height: 80px;
 }
 
-.loginTypeContainer input[type="radio"] {
+.signupTypeContainer input[type="radio"] {
   display: none;
 }
 
-.loginTypeContainer input[type="radio"]:checked + .buyerLabel {
+.signupTypeContainer input[type="radio"]:checked + .buyerLabel {
   background-color: white;
   z-index: 3;
   border-right: none;
 }
 
-.loginTypeContainer input[type="radio"]:checked + .sellerLabel {
+.signupTypeContainer input[type="radio"]:checked + .sellerLabel {
   background-color: white;
   z-index: 3;
   border-left: none;
 }
 
-.loginTypeContainer label {
+.signupTypeContainer label {
   border-radius: 10px 10px 0 0;
   width: 100%;
   flex: 1;
@@ -62,7 +62,7 @@
   border-left: 1px solid #c4c4c4;
 }
 
-.loginForm {
+.signupForm {
   display: flex;
   flex-direction: column;
   padding: 20px 35px 35px;
@@ -74,16 +74,24 @@
   z-index: 2;
 }
 
-.loginForm input {
+.signupForm input:not(:first-of-type) {
   width: 480px;
-  height: 60px;
-  margin-bottom: 10px;
+  height: 54px;
+  margin: 10px 0 12px;
   padding: 0;
-  border: none;
-  border-bottom: 1px solid #c4c4c4;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
 }
 
-.loginForm button {
+.signupForm input:first-of-type {
+  height: 54px;
+  margin: 10px 0 12px;
+  padding: 0;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+}
+
+.signupForm button {
   width: 480px;
   height: 60px;
   margin-top: 35px;
@@ -92,6 +100,11 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.signupForm label {
+  color: #767676;
+  height: 20px;
 }
 
 .linkContainer {
@@ -109,11 +122,16 @@
   color: #333333;
 }
 
+.normalMessage {
+  color: #3dc75f;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
 .errorMessage {
-  width: 284px;
-  color: #eb5757;
-  margin-top: 26px;
-  display: none;
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 .view {

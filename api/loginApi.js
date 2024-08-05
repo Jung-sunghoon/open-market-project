@@ -2,16 +2,31 @@ import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_URL; // API 엔드포인트 URL
 
-export const loginUser = async (id, password) => {
+const loginUser = async (username, password, login_type) => {
   try {
-    const response = await axios.post(`${API_URL}/accounts/login`, {
+    const res = await axios.post(`${API_URL}/accounts/login/`, {
       username,
       password,
       login_type,
     });
-    return response.data; // 서버에서 받은 데이터 반환
+
+    if (res.status === 200) {
+      if (login_type === "BUYER") {
+        const token = res.data.token;
+        localStorage.setItem("token", token);
+        return { message: "Buyer login successful", data: res.data };
+      } else if (login_type === "SELLER") {
+        const token = res.data.token;
+        localStorage.setItem("token", token);
+        return { message: "Seller login successful", data: res.data };
+      }
+    } else {
+      throw new Error("Login failed");
+    }
   } catch (error) {
     console.error("Login error:", error);
-    throw error; // 에러를 상위로 던져서 처리
+    throw new Error("Login failed");
   }
 };
+
+export default loginUser;

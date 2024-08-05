@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   router();
 
-  document.querySelectorAll("nav a").forEach((anchor) => {
+  document.querySelectorAll("a").forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
       e.preventDefault();
       const url = new URL(e.target.href);
