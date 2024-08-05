@@ -24,6 +24,8 @@ const Home = () => {
       localStorage.removeItem("token");
 
       loginText.textContent = "로그인";
+
+      loginText.href = "/login";
     });
   }
 
