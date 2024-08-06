@@ -156,3 +156,10 @@ table {
 a {
   text-decoration: none;
 }
+
+button:disabled {
+  background-color: #c4c4c4;
+  color: white;
+  border-color: light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
+  cursor: auto;
+}

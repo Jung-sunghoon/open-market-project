@@ -1,6 +1,8 @@
 import styles from "./login.module.css";
-import loginUser from "../../api/loginApi";
 import { handleLinkClick, navigateTo } from "../../router";
+import axios from "axios";
+
+const API_URL = import.meta.env.VITE_API_URL; // API 엔드포인트 URL
 
 const Login = () => {
   const loginContainer = document.createElement("div");
@@ -56,7 +58,7 @@ const Login = () => {
   idInput.setAttribute("type", "text");
   idInput.setAttribute("id", "id");
   idInput.setAttribute("name", "id");
-  idInput.setAttribute("autocomplete", "username");
+  idInput.setAttribute("autocomplete", "id");
   idInput.setAttribute("placeholder", "아이디");
 
   const passwordLabel = document.createElement("label");
@@ -116,25 +118,44 @@ const Login = () => {
 
     if (!username) {
       errorMessage.textContent = "아이디를 입력해주세요.";
-      errorMessage.classList.toggle(`${styles.view}`);
+      errorMessage.classList.add(`${styles.view}`);
       idInput.focus();
       return;
     }
 
     if (!password) {
       errorMessage.textContent = "비밀번호를 입력해주세요.";
-      errorMessage.classList.toggle(`${styles.view}`);
+      errorMessage.classList.add(`${styles.view}`);
       passwordInput.focus();
       return;
     }
 
     try {
-      const result = await loginUser(username, password, login_type);
-      console.log(`${login_type} login successful:`, result);
-      navigateTo("/");
+      const res = await axios.post(`${API_URL}/accounts/login/`, {
+        username,
+        password,
+        login_type,
+      });
+
+      if (res.status === 200) {
+        const token = res.data.token;
+        localStorage.setItem("token", token);
+
+        if (login_type === "BUYER") {
+          console.log("Buyer login successful:", res.data);
+        } else if (login_type === "SELLER") {
+          console.log("Seller login successful:", res.data);
+        }
+
+        // navigateTo 함수가 호출되는지 확인하는 로그 추가
+        console.log("Navigating to home page");
+        navigateTo("/");
+      } else {
+        throw new Error("Login failed");
+      }
     } catch (error) {
       errorMessage.textContent = "아이디 또는 비밀번호가 일치하지 않습니다.";
-      errorMessage.classList.toggle(`${styles.view}`);
+      errorMessage.classList.add(`${styles.view}`);
       console.error(`${login_type} login failed:`, error);
     }
   });

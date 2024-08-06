@@ -63,8 +63,6 @@
 }
 
 .loginForm {
-  display: flex;
-  flex-direction: column;
   padding: 20px 35px 35px;
   margin-top: -20px;
   position: relative;
