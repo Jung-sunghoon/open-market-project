@@ -85,12 +85,14 @@
 
 #password,
 #passwordCheck {
-  background: url(images/icon-check-off.svg) no-repeat right 13px center;
+  background: url(/open-market-project/images/icon-check-off.svg) no-repeat
+    right 13px center;
 }
 
 #password.checked,
 #passwordCheck.checked {
-  background: url(images/icon-check-on.svg) no-repeat right 13px center;
+  background: url(/open-market-project/images/icon-check-on.svg) no-repeat right
+    13px center;
 }
 
 .signupForm label {
@@ -153,7 +155,8 @@
 
 .telBtn {
   cursor: pointer;
-  background: url(images/icon-down-arrow.svg) no-repeat right 10px center;
+  background: url(/open-market-project/images/icon-down-arrow.svg) no-repeat
+    right 10px center;
   padding-right: 15px;
 }
 
@@ -195,13 +198,15 @@
 .customCheckbox {
   min-width: 16px;
   height: 16px;
-  background: url(images/check-box.svg) no-repeat center center;
+  background: url(/open-market-project/images/check-box.svg) no-repeat center
+    center;
   background-size: cover;
   cursor: pointer;
 }
 
 #checkbox:checked + .customCheckbox {
-  background: url(images/check-fill-box.svg) no-repeat center center;
+  background: url(/open-market-project/images/check-fill-box.svg) no-repeat
+    center center;
   background-size: cover;
 }
 
