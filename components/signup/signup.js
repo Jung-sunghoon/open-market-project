@@ -137,7 +137,7 @@ const Signup = () => {
   // 타이틀 생성
   const title = document.createElement("h1");
   const logo = document.createElement("img");
-  logo.src = "../assets/Logo-hodu.png";
+  logo.src = "assets/Logo-hodu.png";
   title.className = styles.title;
   logo.className = styles.logo;
   title.appendChild(logo);
@@ -413,7 +413,7 @@ const Signup = () => {
       });
 
       if (res.status == 201) {
-        navigateTo("/");
+        navigateTo("/open-market-project/");
       }
     } catch (error) {
       console.error("Error:", error);

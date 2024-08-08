@@ -10,7 +10,7 @@ const Login = () => {
 
   const title = document.createElement("h1");
   const logo = document.createElement("img");
-  logo.src = "../assets/Logo-hodu.png";
+  logo.src = "assets/Logo-hodu.png";
   title.className = styles.title;
   logo.className = styles.logo;
   title.appendChild(logo);
@@ -79,16 +79,16 @@ const Login = () => {
   linkContainer.className = styles.linkContainer;
 
   const signUp = document.createElement("a");
-  signUp.href = "/signup";
+  signUp.href = "/open-market-project/signup";
   signUp.textContent = "회원가입";
   signUp.addEventListener("click", (event) =>
-    handleLinkClick(event, "/signup")
+    handleLinkClick(event, "/open-market-project/signup")
   );
 
   const findPw = document.createElement("a");
-  findPw.href = "/";
+  findPw.href = "";
   findPw.textContent = "비밀번호 찾기";
-  findPw.addEventListener("click", (event) => handleLinkClick(event, "/"));
+  findPw.addEventListener("click", (event) => handleLinkClick(event, ""));
 
   linkContainer.append(signUp, document.createTextNode("|"), findPw);
 
@@ -149,7 +149,7 @@ const Login = () => {
 
         // navigateTo 함수가 호출되는지 확인하는 로그 추가
         console.log("Navigating to home page");
-        navigateTo("/");
+        navigateTo("/open-market-project/");
       } else {
         throw new Error("Login failed");
       }

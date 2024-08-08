@@ -4,9 +4,9 @@ import Home from "./components/Home.js";
 import Signup from "./components/signup/signup.js";
 
 const routes = {
-  "/": Home,
-  "/login": Login,
-  "/signup": Signup,
+  "/open-market-project/": Home,
+  "/open-market-project/login": Login,
+  "/open-market-project/signup": Signup,
 };
 
 export const router = () => {
@@ -23,7 +23,10 @@ export const router = () => {
   footer.classList.remove("sr-only");
 
   // Add sr-only class based on route
-  if (path === "/login" || path === "/signup") {
+  if (
+    path === "/open-market-project/login" ||
+    path === "/open-market-project/signup"
+  ) {
     header.classList.add("sr-only");
     footer.classList.add("sr-only");
   }

@@ -5,5 +5,5 @@ export default {
       "@": "/src",
     },
   },
-  base: "/",
+  base: "/open-market-project/",
 };
