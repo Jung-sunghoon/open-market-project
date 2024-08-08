@@ -79,14 +79,14 @@ const Login = () => {
   linkContainer.className = styles.linkContainer;
 
   const signUp = document.createElement("a");
-  signUp.href = "/open-market-project/signup";
+  signUp.href = "/signup";
   signUp.textContent = "회원가입";
   signUp.addEventListener("click", (event) =>
     handleLinkClick(event, "/signup")
   );
 
   const findPw = document.createElement("a");
-  findPw.href = "/open-market-project/";
+  findPw.href = "/";
   findPw.textContent = "비밀번호 찾기";
   findPw.addEventListener("click", (event) => handleLinkClick(event, "/"));
 
@@ -149,7 +149,7 @@ const Login = () => {
 
         // navigateTo 함수가 호출되는지 확인하는 로그 추가
         console.log("Navigating to home page");
-        navigateTo("/open-market-project/");
+        navigateTo("/");
       } else {
         throw new Error("Login failed");
       }

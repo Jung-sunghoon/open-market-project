@@ -12,7 +12,7 @@ const Home = () => {
   const token = localStorage.getItem("token");
   if (token) {
     loginText.textContent = "로그아웃";
-    loginText.href = "/open-market-project/";
+    loginText.href = "/";
   }
 
   if (token) {
@@ -25,7 +25,7 @@ const Home = () => {
 
       loginText.textContent = "로그인";
 
-      loginText.href = "/open-market-project/login";
+      loginText.href = "/login";
     });
   }
 
