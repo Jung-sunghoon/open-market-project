@@ -25,7 +25,7 @@ const Home = () => {
 
       loginText.textContent = "로그인";
 
-      loginText.href = "/login";
+      loginText.href = "/open-market-project/login";
     });
   }
 
