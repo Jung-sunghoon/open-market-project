@@ -12,7 +12,7 @@ const Home = () => {
   const token = localStorage.getItem("token");
   if (token) {
     loginText.textContent = "로그아웃";
-    loginText.href = "/";
+    loginText.href = "/open-market-project/";
   }
 
   if (token) {

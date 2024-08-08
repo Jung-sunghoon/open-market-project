@@ -4,7 +4,7 @@ import Home from "./components/Home.js";
 import Signup from "./components/signup/signup.js";
 
 const routes = {
-  "/": Home,
+  "/open-market-project/": Home,
   "/open-market-project/login": Login,
   "/open-market-project/signup": Signup,
 };
